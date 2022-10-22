@@ -1,11 +1,43 @@
-import React from 'react';
-import Flex from "../atoms/Flex";
+import React, {useMemo, useState} from 'react';
+import Button from "../atoms/Button";
+import styled from "styled-components";
+import Datalist from "../molecules/Datalist";
 
-const Header = () => {
+interface HeaderProps {
+
+}
+
+const HeaderStyled = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: black;
+  color: white;
+`
+
+const Header = ({}: HeaderProps) => {
+    const titles = useMemo(() => ['Форми навчання', "Заходи", "Про Академію", "Контакти"],[])
+    const [datalistValue, setDatalistValue] = useState('Київ')
     return (
-        <Flex>
+        <HeaderStyled
+        >
+            {
+                titles.map((title, index) =>
+                    <Button
+                        onClick={() => {}}
+                        key={index}
 
-        </Flex>
+                    >
+                        {title}
+                    </Button>)
+            }
+            <Datalist
+                value={datalistValue}
+                setValue={setDatalistValue}
+                placeholder={'Оберіть місто'}
+                list={'city'}
+            />
+        </HeaderStyled>
     );
 };
 
