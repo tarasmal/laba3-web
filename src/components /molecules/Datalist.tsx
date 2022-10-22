@@ -13,6 +13,8 @@ const InputStyled = styled.input`
   color: white;
   border: hidden;
   padding-left: 15px;
+  border-left: solid white 1px;
+  border-right: solid white 1px;
 `
 
 const Datalist = ({value, setValue, placeholder, list}: DatalistProps) => {
