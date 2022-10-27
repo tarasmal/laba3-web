@@ -41,6 +41,7 @@ interface BlockProps {
     gap?: string,
     whiteSpace?: string,
     overflowWrap?: string,
+    zIndex?: number
 }
 
 const BlockStyled = styled.div<BlockProps>`
@@ -79,6 +80,7 @@ const BlockStyled = styled.div<BlockProps>`
   gap: ${props => props.gap};
   white-space: ${props => props.whiteSpace};
   overflow-wrap: ${props => props.overflowWrap};
+  z-index: ${props => props.zIndex};
 `;
 
 
