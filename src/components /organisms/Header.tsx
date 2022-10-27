@@ -2,6 +2,7 @@ import React, {useMemo, useState} from 'react';
 import Button from "../atoms/Button";
 import styled from "styled-components";
 import Datalist from "../molecules/Datalist";
+import Flex from "../atoms/Flex";
 
 interface HeaderProps {
 
@@ -17,20 +18,22 @@ const HeaderStyled = styled.div`
 
 const Header = ({}: HeaderProps) => {
     const titles = useMemo(() => ['Форми навчання', "Заходи", "Про Академію", "Контакти"],[])
-    const [datalistValue, setDatalistValue] = useState('Київ')
+    const [datalistValue, setDatalistValue] = useState('')
     return (
         <HeaderStyled
         >
-            {
-                titles.map((title, index) =>
-                    <Button
-                        onClick={() => {}}
-                        key={index}
+            <Flex flexDirection={'row'} flexGrow={1} justifyContent={'space-around'}>
+                {
+                    titles.map((title, index) =>
+                        <Button
+                            onClick={() => {}}
+                            key={index}
 
-                    >
-                        {title}
-                    </Button>)
-            }
+                        >
+                            {title}
+                        </Button>)
+                }
+            </Flex>
             <Datalist
                 value={datalistValue}
                 setValue={setDatalistValue}

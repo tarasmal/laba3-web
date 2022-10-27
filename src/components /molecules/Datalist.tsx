@@ -12,9 +12,7 @@ const InputStyled = styled.input`
   background-color: black;
   color: white;
   border: hidden;
-  padding-left: 15px;
-  border-left: solid white 1px;
-  border-right: solid white 1px;
+  padding-left: 15px
 `
 
 const Datalist = ({value, setValue, placeholder, list}: DatalistProps) => {

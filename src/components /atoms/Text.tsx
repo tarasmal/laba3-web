@@ -6,6 +6,7 @@ interface Text {
     color?: string,
     overflowWrap?: string,
     wordBreak?: string
+    marginBottom?: string,
 }
 
 const Text = styled.p<Text>`
@@ -16,6 +17,7 @@ const Text = styled.p<Text>`
   margin: 0;
   overflow-wrap: ${props => props.overflowWrap};
   word-break: ${props => props.wordBreak};
+  margin-bottom: ${props => props.marginBottom};
 `
 
 export default Text;
